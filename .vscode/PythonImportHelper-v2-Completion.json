@@ -1,0 +1,29 @@
+[
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "read_txt_file",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def read_txt_file(txt_file):\n    data = []\n    with open(txt_file, 'r') as file:\n        lines = file.readlines()\n        for i in range(0, len(lines), 3):\n            pdbid_chain = lines[i].strip().split('_')\n            pdbid = pdbid_chain[0]\n            chain_id = pdbid_chain[1]\n            sequence = lines[i+1].strip()\n            interface_residues = lines[i+2].strip()",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "write_csv_file",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def write_csv_file(data, csv_file):\n    with open(csv_file, 'w', newline='') as file:\n        writer = csv.writer(file)\n        writer.writerow(['PDBID', 'ChainID', 'Sequence', 'Interface'])\n        for entry in data:\n            writer.writerow(entry)",
+        "detail": "utils",
+        "documentation": {}
+    }
+]
